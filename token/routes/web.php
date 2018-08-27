@@ -18,6 +18,10 @@ Route::get('/', function () {
 Route::group(['middleware' => ['web']], function () {
     Route::auth();
     Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/note/create', 'NoteController@index')->name('note.create');
 });
 
+Route::group(['prefix' => 'api', 'middleware' => 'auth:api'], function () {
+    Route::post('/note/store', 'NoteController@store')->name('note.store');
+});
 
