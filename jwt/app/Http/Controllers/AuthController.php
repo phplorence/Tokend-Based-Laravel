@@ -19,6 +19,7 @@ class AuthController extends Controller
      */
     public function register(Request $request)
     {
+        dd($request);
         $credentials = $request->only('name', 'email', 'password');
 
         $rules = [
