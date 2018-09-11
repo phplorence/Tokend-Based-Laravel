@@ -6,7 +6,6 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use Tymon\JWTAuth\Facades\JWTAuth;
@@ -88,7 +87,6 @@ class AuthController extends Controller
      */
     public function login(Request $request)
     {
-        Log::info($request);
         $rules = [
             'email' => 'required|email',
             'password' => 'required',
